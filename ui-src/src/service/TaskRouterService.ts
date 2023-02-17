@@ -75,7 +75,6 @@ class TaskRouterService extends ApiService {
     if (queues && !force) return queues;
 
     const response = await this.#getQueues();
-    console.log(response)
     if (response.success) queues = response.queues;
     return queues;
   }

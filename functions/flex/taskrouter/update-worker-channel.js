@@ -31,7 +31,6 @@ exports.handler = prepareFlexFunction(requiredParameters, async (context, event,
       capacity: Number(capacity),
       available: available === "true",
     });
-    console.log(result)
     const { success, message, status, workerChannelCapacity } = result;
     
     response.setStatusCode(status);

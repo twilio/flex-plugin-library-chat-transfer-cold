@@ -55,7 +55,6 @@ describe('Update channel attributes', () => {
 
   it('getQueues is called successfully ', async () => {
     const GetQueues = require('../../functions/flex/taskrouter/get-queues');
-    console.log(GetQueues)
     const handlerFn = GetQueues.handler;
 
     const mockContext = {
@@ -88,7 +87,6 @@ describe('Update channel attributes', () => {
 
     const mockResponse = new Twilio.Response();
     const mockCallbackObject = jest.fn();
-    console.log(handlerFn)
     const mockErrorObject = jest.fn();
     await handlerFn({}, {}, mockCallbackObject, mockResponse, mockErrorObject);
     expect(mockErrorObject.mock.calls.length).toBe(1);
@@ -104,7 +102,6 @@ describe('Update channel attributes', () => {
 
     const mockResponse = new Twilio.Response();
     const mockCallbackObject = jest.fn();
-    console.log(handlerFn)
     const mockErrorObject = jest.fn();
     await handlerFn(mockContext, mockEvent, mockCallbackObject, mockResponse, mockErrorObject);
     expect(mockErrorObject.mock.calls.length).toBe(1);
