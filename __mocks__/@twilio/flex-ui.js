@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { EventEmitter } from 'events';
-import { getMockedServiceConfiguration } from '../../ui-src/test-utils/flex-service-configuration';
-
+import { getMockedServiceConfiguration } from '../../test-utils/flex-service-configuration'
 // We need to mock anything our plugin uses from @twilio/flex-ui here
 
 class WorkerClient extends EventEmitter {

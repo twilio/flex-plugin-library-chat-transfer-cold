@@ -78,16 +78,12 @@ describe('Update channel attributes', () => {
     it('getQueues error handler is called', async () => {
       const GetQueues = require('../../functions/flex/taskrouter/update-task-assignment-status');
       const handlerFn = GetQueues.handler;
-      const mockEvent = {
-        taskSid: 'TAxxxxx',
-        assignmentStatus: 'test status'
-      };
   
       const mockResponse = new Twilio.Response();
       const mockCallbackObject = jest.fn();
       console.log(handlerFn)
       const mockErrorObject = jest.fn();
-      await handlerFn({}, {}, mockCallbackObject, mockResponse, mockErrorObject);
+       handlerFn({}, {}, mockCallbackObject, mockResponse, mockErrorObject);
       expect(mockErrorObject.mock.calls.length).toBe(1);
     });
   });

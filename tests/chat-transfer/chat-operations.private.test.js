@@ -1,4 +1,5 @@
 import helpers from '../test-utils/test-helper';
+import mockAxios from "axios"
 const resp = {
   data: {
     attributes: {}
@@ -8,11 +9,11 @@ const resp = {
   }
 
 }
-jest.mock("axios", () => () => {
-  return {
-    get: () => Promise.resolve(resp)
-  }
-});
+const originalEnv = process.env;
+  process.env = {
+    ...originalEnv,
+    TWILIO_FLEX_WORKSPACE_SID :'WSxxxxx',
+  };
 describe('chat operations', () => {
   const chatOperationsTwilioClient = function (getQueues) {
     const getServices = (_chatServiceSid) => ({
@@ -66,7 +67,8 @@ describe('chat operations', () => {
       channelSid: "CHXXxxxx",
       taskSid: "TKxxx"
     }
-    const p = await addTaskToChannel({ ...payload })
+    const p = await addTaskToChannel({ ...payload });
+    expect(p.status).toEqual(200);
   })
   it('set task to complete channel', async () => {
     const { setTaskToCompleteOnChannel } = require('../../functions/chat-transfer/common/chat-operations.private');
@@ -84,13 +86,17 @@ describe('chat operations', () => {
       taskSid: "TKxxx"
     }
     const p = await setTaskToCompleteOnChannel({ ...payload })
+    expect(p.status).toEqual(200);
   })
   it('remove channel sid from task', async () => {
     const { removeChannelSidFromTask } = require('../../functions/chat-transfer/common/chat-operations.private');
+    mockAxios.get.mockImplementationOnce(() => Promise.resolve({data:'restly'}))
     const mockContext = {
       PATH: 'mockPath',
       getTwilioClient: () => chatOperationsTwilioClient(getQueues),
-      TWILIO_FLEX_CHAT_SERVICE_SID: "FCSxxx"
+      TWILIO_FLEX_CHAT_SERVICE_SID: "FCSxxx",
+      ACCOUNT_SID:"ACxxxx",
+      AUTH_TOKEN:"ATxxxx"
     };
 
     const payload = {
@@ -100,6 +106,7 @@ describe('chat operations', () => {
       taskSid: "TKxxx"
     }
     const p = await removeChannelSidFromTask({ ...payload })
+    process.env = originalEnv
   })
   it('addTaskToChannel gives error due to invalid context', async () => {
     const { addTaskToChannel } = require('../../functions/chat-transfer/common/chat-operations.private');

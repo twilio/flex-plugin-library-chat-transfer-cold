@@ -124,6 +124,7 @@ exports.completeTask = async function completeTask(parameters) {
     // in which case it is also assumed to be completed
     // https://www.twilio.com/docs/api/errors/20404
     if (error.code === 20001 || error.code === 20404) {
+      console.log(arguments)
       
       const { context } = parameters;
       console.warn(

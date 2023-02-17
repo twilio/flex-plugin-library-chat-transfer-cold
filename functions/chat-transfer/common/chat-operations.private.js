@@ -143,7 +143,7 @@ exports.removeChannelSidFromTask = async function removeChannelSidFromTask(
 
   try {
     const axios = require("axios");
-
+    console.log("here------------------------")
     const taskContextURL = `https://taskrouter.twilio.com/v1/Workspaces/${process.env.TWILIO_FLEX_WORKSPACE_SID}/Tasks/${taskSid}`;
     let config = {
       auth: {

@@ -46,7 +46,7 @@ describe('programmable chat error scenarios', () => {
     const { updateChannelAttributes } = require('../../functions/twilio-wrappers/programmable-chat.private');
     const mockContext = {
       PATH: 'mockPath',
-      getTwilioClient: () => chatOperationsTwilioClient(getQueues),
+      getTwilioClient: () => programmableChatTwilioClient(getQueues),
       TWILIO_FLEX_CHAT_SERVICE_SID: "FCSxxx"
     };
 
@@ -64,7 +64,7 @@ describe('programmable chat error scenarios', () => {
     const { updateChannelAttributes } = require('../../functions/twilio-wrappers/programmable-chat.private');
     const mockContext = {
       PATH: 'mockPath',
-      getTwilioClient: () => chatOperationsTwilioClient(getQueues),
+      getTwilioClient: () => programmableChatTwilioClient(getQueues),
       TWILIO_FLEX_CHAT_SERVICE_SID: "FCSxxx"
     };
 
