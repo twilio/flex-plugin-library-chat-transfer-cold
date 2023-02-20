@@ -12,7 +12,6 @@ exports.handler = prepareFlexFunction(requiredParameters, async (context, event,
       attempts: 0,
     });
     const { success, queues: fullQueueData, message, status } = result;
-    console.log(fullQueueData)
     const queues = fullQueueData
       ? fullQueueData.map((queue) => {
           const { targetWorkers, friendlyName, sid } = queue;

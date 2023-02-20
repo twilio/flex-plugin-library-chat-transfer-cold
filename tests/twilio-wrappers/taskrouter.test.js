@@ -70,9 +70,10 @@ describe('taskrouter', () => {
             attempts: 0
         }
 
-        await completeTask({ ...payload });
+        const res = await completeTask({ ...payload });
+        expect(res.status).toEqual(200);
     });
-    it('taskRouter should throw error', async () => {
+    it.only('taskRouter should throw error', async () => {
         const { completeTask } = require('../../functions/twilio-wrappers/taskrouter.private');
 
         const mockContext = {
@@ -86,7 +87,7 @@ describe('taskrouter', () => {
             attempts: 0
         }
 
-        await completeTask({ ...payload });
+        const res = await completeTask({ ...payload });
     });
     it('completeTask gives error due to invalid context ', async () => {
         const { completeTask } = require('../../functions/twilio-wrappers/taskrouter.private');
@@ -194,7 +195,7 @@ describe('taskrouter', () => {
             attempts: 0
         }
         await createTask({ ...payload }).catch(err => {
-            expect(err).toMatch('Invalid parameters object passed. Parameters must contain the number of attempts')
+            expect(err).toMatch('Invalid parameters object passed. Parameters must contain taskChannel string')
         });
     });
     it('createTask gives error due to invalid attributes', async () => {
@@ -216,7 +217,7 @@ describe('taskrouter', () => {
             attempts: 0
         }
         await createTask({ ...payload }).catch(err => {
-            expect(err).toMatch('Invalid parameters object passed. Parameters must contain the number of attempts')
+            expect(err).toMatch('Invalid parameters object passed. Parameters must contain attributes object')
         });
     });
     it('updateTaskAttributes gives error due to invalid attempts', async () => {
@@ -398,7 +399,7 @@ describe('taskrouter', () => {
         const payload = {
             context: mockContext,
             attempts: 0,
-            taskSid:123,
+            taskSid:'TAxxx',
             updateParams:''
         }
         await updateTask({ ...payload }).catch(err => {

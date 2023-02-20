@@ -52,7 +52,6 @@ exports.handler = prepareFlexFunction(requiredParameters, async (context, event,
     
     // setup the new task attributes based on the old
     const originalTaskAttributes = JSON.parse(jsonAttributes);
-    console.log(originalTaskAttributes)
     const newAttributes = {
       ...originalTaskAttributes,
       ignoreWorkerContactUri,

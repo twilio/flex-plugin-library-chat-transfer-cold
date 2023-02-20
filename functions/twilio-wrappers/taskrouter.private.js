@@ -163,7 +163,6 @@ exports.completeTask = async function completeTask(parameters) {
  * @description creates a task
  */
 exports.createTask = async function createTask(parameters) {
-  console.log(parameters)
   const {
     context,
     workflowSid,

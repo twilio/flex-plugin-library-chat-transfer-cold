@@ -92,7 +92,6 @@ exports.setTaskToCompleteOnChannel = async function (parameters) {
       .services(context.TWILIO_FLEX_CHAT_SERVICE_SID)
       .channels(channelSid)
       .fetch();
-    console.log(channel)
     if (!channel) return { success: false, message: "channel not found" };
 
     const currentAttributes = JSON.parse(channel.attributes);
@@ -143,7 +142,6 @@ exports.removeChannelSidFromTask = async function removeChannelSidFromTask(
 
   try {
     const axios = require("axios");
-
     const taskContextURL = `https://taskrouter.twilio.com/v1/Workspaces/${process.env.TWILIO_FLEX_WORKSPACE_SID}/Tasks/${taskSid}`;
     let config = {
       auth: {
@@ -154,7 +152,6 @@ exports.removeChannelSidFromTask = async function removeChannelSidFromTask(
     // we need to fetch the task using a rest API because
     // we need to examine the headers to get the ETag
     const getResponse = await axios.get(taskContextURL, config);
-    console.log(getResponse)
     let task = getResponse.data;
     task.attributes = JSON.parse(getResponse.data.attributes);
     task.revision = JSON.parse(getResponse.headers.etag);

@@ -1,9 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="2" failures="0" errors="0" time="3.667">
-  <testsuite name="Complete Task for Transfer" errors="0" failures="0" skipped="0" timestamp="2023-02-07T13:34:27" time="2.095" tests="2">
-    <testcase classname="Complete Task for Transfer Complete Task for Transfer" name="Complete Task for Transfer Complete Task for Transfer" time="1.072">
+<testsuites name="jest tests" tests="21" failures="1" errors="0" time="2.154">
+  <testsuite name="taskrouter" errors="0" failures="1" skipped="20" timestamp="2023-02-12T02:47:57" time="1" tests="21">
+    <testcase classname="taskrouter taskRouter is called successfully " name="taskrouter taskRouter is called successfully " time="0">
+      <skipped/>
     </testcase>
-    <testcase classname="Complete Task for Transfer Complete Task for Transfer error handler is called" name="Complete Task for Transfer Complete Task for Transfer error handler is called" time="0.002">
+    <testcase classname="taskrouter taskRouter should throw error" name="taskrouter taskRouter should throw error" time="0.369">
+      <failure>TypeError: &apos;caller&apos;, &apos;callee&apos;, and &apos;arguments&apos; properties may not be accessed on strict mode functions or the arguments objects for calls to them
+    at _callee2$ (/Users/shmohanty/Workspace/segregated pugins/chat-sms-transfer/functions/twilio-wrappers/taskrouter.private.js:131:38)
+    at tryCatch (/Users/shmohanty/Workspace/segregated pugins/chat-sms-transfer/functions/twilio-wrappers/taskrouter.private.js:2:1)
+    at Generator.&lt;anonymous&gt; (/Users/shmohanty/Workspace/segregated pugins/chat-sms-transfer/functions/twilio-wrappers/taskrouter.private.js:2:1)
+    at Generator.throw (/Users/shmohanty/Workspace/segregated pugins/chat-sms-transfer/functions/twilio-wrappers/taskrouter.private.js:2:1)
+    at asyncGeneratorStep (/Users/shmohanty/Workspace/segregated pugins/chat-sms-transfer/functions/twilio-wrappers/taskrouter.private.js:2:1)
+    at _throw (/Users/shmohanty/Workspace/segregated pugins/chat-sms-transfer/functions/twilio-wrappers/taskrouter.private.js:2:1)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)</failure>
+    </testcase>
+    <testcase classname="taskrouter completeTask gives error due to invalid context " name="taskrouter completeTask gives error due to invalid context " time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter completeTask gives error due to invalid reason " name="taskrouter completeTask gives error due to invalid reason " time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter completeTask gives error due to invalid attempts " name="taskrouter completeTask gives error due to invalid attempts " time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter completeTask gives error due to invalid taskSid " name="taskrouter completeTask gives error due to invalid taskSid " time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter createTask gives error due to invalid attempts " name="taskrouter createTask gives error due to invalid attempts " time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter createTask gives error due to invalid taskChannel" name="taskrouter createTask gives error due to invalid taskChannel" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter createTask gives error due to invalid attributes" name="taskrouter createTask gives error due to invalid attributes" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter updateTaskAttributes gives error due to invalid attempts" name="taskrouter updateTaskAttributes gives error due to invalid attempts" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter updateTaskAttributes gives error due to invalid attributesUpdate" name="taskrouter updateTaskAttributes gives error due to invalid attributesUpdate" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter getQueues gives error due to invalid attempts" name="taskrouter getQueues gives error due to invalid attempts" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter getWorkerChannels gives error due to invalid attempts" name="taskrouter getWorkerChannels gives error due to invalid attempts" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter updateWorkerChannel gives error due to invalid attempts" name="taskrouter updateWorkerChannel gives error due to invalid attempts" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter updateWorkerChannel gives error due to invalid capacity" name="taskrouter updateWorkerChannel gives error due to invalid capacity" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter updateWorkerChannel gives error due to invalid available" name="taskrouter updateWorkerChannel gives error due to invalid available" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter updateTask success" name="taskrouter updateTask success" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter updateTask gives error due to invalid attempts" name="taskrouter updateTask gives error due to invalid attempts" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter updateTask gives error due to invalid context" name="taskrouter updateTask gives error due to invalid context" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter updateTask gives error due to invalid taskSid" name="taskrouter updateTask gives error due to invalid taskSid" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="taskrouter updateTask gives error due to invalid taskSid" name="taskrouter updateTask gives error due to invalid taskSid" time="0">
+      <skipped/>
     </testcase>
   </testsuite>
 </testsuites>
