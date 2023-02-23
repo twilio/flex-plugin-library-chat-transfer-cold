@@ -1,3 +1,4 @@
+# CURRENT VERSION OF CODE IS NOT PRODUCTION READY YET.
 # chat-transfer
 
 This feature enables chat users to perform warm and cold transfers to individual agents or queues. It also introduces notifications into the chat channel for users joining or leaving chat, or starting a warm or cold transfer.
