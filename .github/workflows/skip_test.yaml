@@ -1,0 +1,19 @@
+name: Skip Test
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'assets/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'assets/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Unit Test execution not required. Passing status check"
