@@ -1,6 +1,6 @@
 {
   "name": "flex-plugin-library-chat-transfer-cold",
-  "version": "9.0.49",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "test:watch": "jest --watch",
