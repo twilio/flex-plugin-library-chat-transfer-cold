@@ -51,7 +51,7 @@ describe('Update channel attributes', () => {
   
     it('getQueues is called successfully ', async () => {
         
-      const GetQueues = require('../../functions/flex/taskrouter/update-task-assignment-status');
+      const GetQueues = require('../../functions/common/flex/taskrouter/update-task-assignment-status');
       const handlerFn = GetQueues.handler;
   
       const mockContext = {
@@ -75,7 +75,7 @@ describe('Update channel attributes', () => {
     });
   
     it('getQueues error handler is called', async () => {
-      const GetQueues = require('../../functions/flex/taskrouter/update-task-assignment-status');
+      const GetQueues = require('../../functions/common/flex/taskrouter/update-task-assignment-status');
       const handlerFn = GetQueues.handler;
   
       const mockResponse = new Twilio.Response();

@@ -55,7 +55,7 @@ describe('Update worker channel', () => {
     });
 
     it('getQueues is called successfully ', async () => {
-        const UpdateTaskAttributes = require('../../functions/flex/taskrouter/update-worker-channel');
+        const UpdateTaskAttributes = require('../../functions/common/flex/taskrouter/update-worker-channel');
         const handlerFn = UpdateTaskAttributes.handler;
 
         const mockContext = {
@@ -83,7 +83,7 @@ describe('Update worker channel', () => {
         await handlerFn(mockContext, mockEvent, mockCallbackObject, mockResponse, mockErrorObject);
     });
     it('updateworkerchannel is called successfully roles include admin', async () => {
-        const UpdateTaskAttributes = require('../../functions/flex/taskrouter/update-worker-channel');
+        const UpdateTaskAttributes = require('../../functions/common/flex/taskrouter/update-worker-channel');
         const handlerFn = UpdateTaskAttributes.handler;
 
         const mockContext = {
@@ -112,7 +112,7 @@ describe('Update worker channel', () => {
     });
 
     it('get-worker-channel error handler is called', async () => {
-        const UpdateTaskAttributes = require('../../functions/flex/taskrouter/update-worker-channel');
+        const UpdateTaskAttributes = require('../../functions/common/flex/taskrouter/update-worker-channel');
         const handlerFn = UpdateTaskAttributes.handler;
         const mockResponse = new Twilio.Response();
         const mockCallbackObject = jest.fn();
@@ -122,7 +122,7 @@ describe('Update worker channel', () => {
         expect(mockErrorObject.mock.calls.length).toBe(1);
     });
     it('get-worker-channel error handler is called due to invalid context ', async () => {
-        const UpdateTaskAttributes = require('../../functions/flex/taskrouter/update-worker-channel');
+        const UpdateTaskAttributes = require('../../functions/common/flex/taskrouter/update-worker-channel');
         const handlerFn = UpdateTaskAttributes.handler;
         const mockResponse = new Twilio.Response();
         const mockCallbackObject = jest.fn();
@@ -141,7 +141,7 @@ describe('Update worker channel', () => {
         expect(mockErrorObject.mock.calls.length).toBe(1);
     });
     it('get-worker-channel error handler is called due to invalid workerSid ', async () => {
-        const UpdateTaskAttributes = require('../../functions/flex/taskrouter/update-worker-channel');
+        const UpdateTaskAttributes = require('../../functions/common/flex/taskrouter/update-worker-channel');
         const handlerFn = UpdateTaskAttributes.handler;
         const mockResponse = new Twilio.Response();
         const mockCallbackObject = jest.fn();
@@ -160,7 +160,7 @@ describe('Update worker channel', () => {
         expect(mockErrorObject.mock.calls.length).toBe(1);
     });
     it('get-worker-channel error handler is called due to invalid workerChannelSid ', async () => {
-        const UpdateTaskAttributes = require('../../functions/flex/taskrouter/update-worker-channel');
+        const UpdateTaskAttributes = require('../../functions/common/flex/taskrouter/update-worker-channel');
         const handlerFn = UpdateTaskAttributes.handler;
         const mockResponse = new Twilio.Response();
         const mockCallbackObject = jest.fn();

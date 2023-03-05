@@ -51,7 +51,7 @@ describe('Update channel attributes', () => {
   });
 
   it('updateChannelAttributes is called successfully ', async () => {
-    const UpdateChannelAttributes = require('../../functions/flex/programmable-chat/update-channel-attributes');
+    const UpdateChannelAttributes = require('../../functions/common/flex/programmable-chat/update-channel-attributes');
     const handlerFn = UpdateChannelAttributes.handler;
 
     const mockContext = {
@@ -75,7 +75,7 @@ describe('Update channel attributes', () => {
   });
 
   it('updateChannelAttributes error handler is called', async () => {
-    const UpdateChannelAttributes = require('../../functions/flex/programmable-chat/update-channel-attributes');
+    const UpdateChannelAttributes = require('../../functions/common/flex/programmable-chat/update-channel-attributes');
     const handlerFn = UpdateChannelAttributes.handler;
     const mockEvent = {
         channelSid: 'CHxxxxx',
