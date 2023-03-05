@@ -54,7 +54,7 @@ describe('Get worker channel', () => {
   });
 
   it('getQueues is called successfully ', async () => {
-    const GetWorkerChannel = require('../../functions/flex/taskrouter/get-worker-channels');
+    const GetWorkerChannel = require('../../functions/common/flex/taskrouter/get-worker-channels');
     const handlerFn = GetWorkerChannel.handler;
 
     const mockContext = {
@@ -77,7 +77,7 @@ describe('Get worker channel', () => {
   });
 
   it('get-worker-channel error handler is called', async () => {
-    const GetWorkerChannel = require('../../functions/flex/taskrouter/get-worker-channels');
+    const GetWorkerChannel = require('../../functions/common/flex/taskrouter/get-worker-channels');
     const handlerFn = GetWorkerChannel.handler;
     const mockResponse = new Twilio.Response();
     const mockCallbackObject = jest.fn();
@@ -87,7 +87,7 @@ describe('Get worker channel', () => {
     expect(mockErrorObject.mock.calls.length).toBe(1);
   });
   it('get-worker-channel error handler is called as invalid context', async () => {
-    const GetWorkerChannel = require('../../functions/flex/taskrouter/get-worker-channels');
+    const GetWorkerChannel = require('../../functions/common/flex/taskrouter/get-worker-channels');
     const handlerFn = GetWorkerChannel.handler;
     const mockResponse = new Twilio.Response();
     const mockCallbackObject = jest.fn();

@@ -54,7 +54,7 @@ describe('Update task attributes', () => {
   });
 
   it('getQueues is called successfully ', async () => {
-    const UpdateTaskAttributes = require('../../functions/flex/taskrouter/update-task-attributes');
+    const UpdateTaskAttributes = require('../../functions/common/flex/taskrouter/update-task-attributes');
     const handlerFn = UpdateTaskAttributes.handler;
     const mockContext = {
       PATH: 'mockPath',
@@ -77,7 +77,7 @@ describe('Update task attributes', () => {
   });
 
   it('get-worker-channel error handler is called', async () => {
-    const UpdateTaskAttributes = require('../../functions/flex/taskrouter/update-task-attributes');
+    const UpdateTaskAttributes = require('../../functions/common/flex/taskrouter/update-task-attributes');
     const handlerFn = UpdateTaskAttributes.handler;
     const mockResponse = new Twilio.Response();
     const mockCallbackObject = jest.fn();

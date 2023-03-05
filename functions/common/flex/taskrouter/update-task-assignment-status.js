@@ -28,7 +28,7 @@ exports.handler = TokenValidator(async function updateTaskAttributes(
   );
 
   response.appendHeader("Access-Control-Allow-Origin", "*");
-  response.appendHeader("Access-Control-Allow-Methods", "OPTIONS POST");
+  response.appendHeader("Access-Control-Allow-Methods", "OPTIONS, POST");
   response.appendHeader("Content-Type", "application/json");
   response.appendHeader("Access-Control-Allow-Headers", "Content-Type");
 
