@@ -133,7 +133,7 @@ exports.handler = async function (context, event, callback) {
       await activateBuild(context.IN_PROGRESS_BUILD_SID, environmentSid, serviceSid, serverlessClient);
       const currentEnvironment = await helpers.environment.getCurrentEnvironment(context);
       await helpers.environment.setEnvironmentVariable(context, currentEnvironment, 'IN_PROGRESS_BUILD_SID', '');
-      return callback(null, { status: 'completed', pluginURI: `${domain_name}${pluginBaseUrl}/bundle.js` });
+      return callback(null, { status: 'completed', pluginURI: `https://${domain_name}${pluginBaseUrl}/bundle.js` });
     } else {
       return callback(null, { status: 'building' });
     }
