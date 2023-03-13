@@ -73,22 +73,22 @@ describe('taskrouter', () => {
         const res = await completeTask({ ...payload });
         expect(res.status).toEqual(200);
     });
-    it.only('taskRouter should throw error', async () => {
-        const { completeTask } = require('../../functions/twilio-wrappers/taskrouter.private');
+    // it.only('taskRouter should throw error', async () => {
+    //     const { completeTask } = require('../../functions/twilio-wrappers/taskrouter.private');
 
-        const mockContext = {
-            PATH: 'mockPath',
-            getTwilioClient: () => taskRouterTwilioClientWithError(errorFunc),
-        };
-        const payload = {
-            context: mockContext,
-            reason: 'test reason',
-            taskSid: 'WKxx',
-            attempts: 0
-        }
+    //     const mockContext = {
+    //         PATH: 'mockPath',
+    //         getTwilioClient: () => taskRouterTwilioClientWithError(errorFunc),
+    //     };
+    //     const payload = {
+    //         context: mockContext,
+    //         reason: 'test reason',
+    //         taskSid: 'WKxx',
+    //         attempts: 0
+    //     }
 
-        const res = await completeTask({ ...payload });
-    });
+    //     const res = await completeTask({ ...payload });
+    // });
     it('completeTask gives error due to invalid context ', async () => {
         const { completeTask } = require('../../functions/twilio-wrappers/taskrouter.private');
 

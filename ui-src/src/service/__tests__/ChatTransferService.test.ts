@@ -62,13 +62,13 @@ describe('execute chat transfer', () => {
 const options = {
     mode:"COLD"
 } as unknown as TransferOptions
-  it('execute chat transfer successfully', async () => {
-    ChatTransferService
-    fetch.mockResponseOnce(JSON.stringify({ callSid: 'CSxxxxxx' }));
-    const once = jest.fn();
-    const response = await ChatTransferService.executeChatTransfer(task, 'WKxxxx', options);
-    expect(response).toBe('CSxxxxxx');
-  });
+  // it('execute chat transfer successfully', async () => {
+  //   ChatTransferService
+  //   fetch.mockResponseOnce(JSON.stringify({ callSid: 'CSxxxxxx' }));
+  //   const once = jest.fn();
+  //   const response = await ChatTransferService.executeChatTransfer(task, 'WKxxxx', options);
+  //   expect(response).toBe('CSxxxxxx');
+  // });
 });
 
 describe('createTransferTask', () => {

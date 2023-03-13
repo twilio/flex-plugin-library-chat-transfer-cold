@@ -54,7 +54,7 @@ describe('Update channel attributes', () => {
   });
 
   it('getQueues is called successfully ', async () => {
-    const GetQueues = require('../../common/flex/taskrouter/get-queues');
+    const GetQueues = require('../../functions/common/flex/taskrouter/get-queues');
     const handlerFn = GetQueues.handler;
 
     const mockContext = {
@@ -78,7 +78,7 @@ describe('Update channel attributes', () => {
   });
 
   it('getQueues error handler is called', async () => {
-    const GetQueues = require('../../common/flex/taskrouter/get-queues');
+    const GetQueues = require('../../functions/common/flex/taskrouter/get-queues');
     const handlerFn = GetQueues.handler;
     const mockEvent = {
         channelSid: 'CHxxxxx',
@@ -92,7 +92,7 @@ describe('Update channel attributes', () => {
     expect(mockErrorObject.mock.calls.length).toBe(1);
   });
   it('getQueues error handler is called because of invalid context', async () => {
-    const GetQueues = require('../../common/flex/taskrouter/get-queues');
+    const GetQueues = require('../../functions/common/flex/taskrouter/get-queues');
     const handlerFn = GetQueues.handler;
     const mockContext = 'test context';
     const mockEvent = {
