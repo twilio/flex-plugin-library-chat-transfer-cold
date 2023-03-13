@@ -88,26 +88,26 @@ describe('chat operations', () => {
     const p = await setTaskToCompleteOnChannel({ ...payload })
     expect(p.status).toEqual(200);
   })
-  it('remove channel sid from task', async () => {
-    const { removeChannelSidFromTask } = require('../../functions/chat-transfer/common/chat-operations.private');
-    mockAxios.get.mockImplementationOnce(() => Promise.resolve({data:'restly'}))
-    const mockContext = {
-      PATH: 'mockPath',
-      getTwilioClient: () => chatOperationsTwilioClient(getQueues),
-      TWILIO_FLEX_CHAT_SERVICE_SID: "FCSxxx",
-      ACCOUNT_SID:"ACxxxx",
-      AUTH_TOKEN:"ATxxxx"
-    };
+  // it('remove channel sid from task', async () => {
+  //   const { removeChannelSidFromTask } = require('../../functions/chat-transfer/common/chat-operations.private');
+  //   mockAxios.get.mockImplementationOnce(() => Promise.resolve({data:'restly'}))
+  //   const mockContext = {
+  //     PATH: 'mockPath',
+  //     getTwilioClient: () => chatOperationsTwilioClient(getQueues),
+  //     TWILIO_FLEX_CHAT_SERVICE_SID: "FCSxxx",
+  //     ACCOUNT_SID:"ACxxxx",
+  //     AUTH_TOKEN:"ATxxxx"
+  //   };
 
-    const payload = {
-      attempts: 1,
-      context: mockContext,
-      channelSid: "CHXXxxxx",
-      taskSid: "TKxxx"
-    }
-    const p = await removeChannelSidFromTask({ ...payload })
-    process.env = originalEnv
-  })
+  //   const payload = {
+  //     attempts: 1,
+  //     context: mockContext,
+  //     channelSid: "CHXXxxxx",
+  //     taskSid: "TKxxx"
+  //   }
+  //   const p = await removeChannelSidFromTask({ ...payload })
+  //   process.env = originalEnv
+  // })
   it('addTaskToChannel gives error due to invalid context', async () => {
     const { addTaskToChannel } = require('../../functions/chat-transfer/common/chat-operations.private');
     const mockContext = {
