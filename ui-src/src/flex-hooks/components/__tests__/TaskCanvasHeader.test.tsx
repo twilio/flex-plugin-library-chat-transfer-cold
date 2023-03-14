@@ -2,7 +2,6 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react'
 import { addTransferButtonToChatTaskView } from '../TaskCanvasHeader'
 import '@testing-library/jest-dom'
-import "jest-styled-components";
 import {TaskCanvasHeader}  from '@twilio/flex-ui';
 
 jest.mock('@twilio/flex-ui', () => {

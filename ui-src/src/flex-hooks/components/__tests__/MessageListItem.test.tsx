@@ -2,7 +2,6 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react'
 import { replaceMessageForNotifications } from '../MessageListItem'
 import '@testing-library/jest-dom'
-import "jest-styled-components";
 import {MessageListItem}  from '@twilio/flex-ui';
 
 jest.mock('@twilio/flex-ui', () => {

@@ -1,9 +1,8 @@
 import {
     announceOnChannelWhenLeaving,
     removeChannelSidAndLeaveChatForChatTransfer
-} from '../WrapupTask'
-import '@testing-library/jest-dom'
-import "jest-styled-components";
+} from '../WrapupTask';
+import '@testing-library/jest-dom';
 import * as Flex from '@twilio/flex-ui';
 import * as ChatTransferService from '../../../service/ChatTransferService';
 
