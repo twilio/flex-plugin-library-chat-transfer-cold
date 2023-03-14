@@ -1,8 +1,7 @@
 import { interceptTransferredChatTasks } from '../CompleteTask'
-import '@testing-library/jest-dom'
-import "jest-styled-components";
+import '@testing-library/jest-dom';
 import * as Flex  from '@twilio/flex-ui';
-import ChatTransferService from '../../../service/ChatTransferService'
+import ChatTransferService from '../../../service/ChatTransferService';
 
   jest.mock('../../../service/ChatTransferService', () => {
     return {

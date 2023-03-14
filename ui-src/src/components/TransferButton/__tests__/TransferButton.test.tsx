@@ -1,8 +1,7 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react';
 import { TransferButton } from '../TransferButton';
-import '@testing-library/jest-dom'
-import "jest-styled-components";
+import '@testing-library/jest-dom';
 import { ITask, Actions } from '@twilio/flex-ui';
 
 jest.mock('@twilio/flex-ui', () => {

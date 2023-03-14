@@ -1,6 +1,5 @@
 import { interceptTransferOverrideForChatTasks } from '../TransferTask'
-import '@testing-library/jest-dom'
-import "jest-styled-components";
+import '@testing-library/jest-dom';
 import * as Flex  from '@twilio/flex-ui';
 import ChatTransferService from '../../../service/ChatTransferService'
 
